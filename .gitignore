@@ -6,3 +6,5 @@
 sap.Rcheck/
 sap*.tar.gz
 sap*.tgz
+
+/.quarto/
