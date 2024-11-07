@@ -59,40 +59,11 @@ View all the applications in the [`sap` branches](https://github.com/mjfrigaard/
 
 ## External resources 
 
-### `10_debug-explore`
+### `11_debug-print`
 
-[`10_debug-explore`](https://github.com/mjfrigaard/sap/tree/10_debug-explore) gives an example of exploring application code with RStudio/Positron's debugging tools. 
+[`11_debug-print`](https://github.com/mjfrigaard/sap/tree/11_debug-print) gives an example of exploring application code with Shiny/Positron's print debugging tools. 
 
-The branch has the following apps: 
 
-### launch_observe()
-
-```r
-launch_observe <- function() {
-  ui <- bslib::page_fluid(
-    titlePanel(p("Simple", code("observe()"), "Shiny App")),
-    bslib::layout_column_wrap(
-      width = 1/2,
-      bslib::card(
-        bslib::card_header("Press the Button"),
-        actionButton(
-          inputId = "btn", 
-          label = "Click Me!")
-      )
-    )
-  )
-  server <- function(input, output, session) {
-    observe({
-      if (input$btn > 0) {  
-        print("Clicked!")  
-      }
-    })
-  }
-  shinyApp(ui, server)
-}
-```
-
-### launch_debug()
 
 ```r
 launch_debug <- function() {
