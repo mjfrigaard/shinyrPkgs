@@ -1,12 +1,12 @@
-<h1 align="center"> <code><strong>shinyrPkgs</strong></code> </h1>
+<h1 align="center"> <code><strong>sap</strong></code> </h1>
 <h3 align="center"> Code examples for <a href="https://mjfrigaard.github.io/shiny-app-pkgs/"> Shiny App-Packages </a> </h3>
 <hr>
 
 <hr>
 
-# shinyrPkgs
+# sap
 
-`shinyrPkgs` provides the code examples in for the [Shiny App-Packages](https://mjfrigaard.github.io/shinyap/) book and the [Developing & Testing Your Shiny Application](https://mjfrigaard.github.io/dev-test-shiny/) workshop provided at R in Pharma (2023).
+`sap` provides the code examples in for the [Shiny App-Packages](https://mjfrigaard.github.io/shinyap/) book and the [Developing & Testing Your Shiny Application](https://mjfrigaard.github.io/dev-test-shiny/) workshop provided at R in Pharma (2023).
 
 ## Movie review data application
 
@@ -45,21 +45,21 @@ launch(app = "02.3_proj-app")
 Or use the terminal
 
 ``` bash
-git clone https://github.com/mjfrigaard/shinyrPkgs.git
-cd shinyrPkgs
+git clone https://github.com/mjfrigaard/sap.git
+cd sap
 git checkout <branch_name>
-open shinyrPkgs.Rproj
+open sap.Rproj
 ```
 
 ------------------------------------------------------------------------
 
 # Branches
 
-View all the applications in the [`shinyrPkgs` branches](https://github.com/mjfrigaard/shinyrPkgs/branches/all).
+View all the applications in the [`sap` branches](https://github.com/mjfrigaard/sap/branches/all).
 
 ## Design 
 
 ### `22_design`
 
-[`22_design`](https://github.com/mjfrigaard/shinyrPkgs/tree/22_design) expands the use [`bslib`](https://rstudio.github.io/bslib/index.html)’s layout functions, builds interactive graphs with [`plotly`](https://plotly.com/r/getting-started/), adds colors and themes with [`thematic`](https://rstudio.github.io/thematic/index.html), and conditionally displays the contents in a [`reactable`](https://glin.github.io/reactable/) table. 
+[`22_design`](https://github.com/mjfrigaard/sap/tree/22_design) expands the use [`bslib`](https://rstudio.github.io/bslib/index.html)’s layout functions, builds interactive graphs with [`plotly`](https://plotly.com/r/getting-started/), adds colors and themes with [`thematic`](https://rstudio.github.io/thematic/index.html), and conditionally displays the contents in a [`reactable`](https://glin.github.io/reactable/) table. 
 

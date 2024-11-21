@@ -25,7 +25,6 @@ typically found in film ratings or genres, enhancing the visual representation
 of data tables.
 }
 \examples{
-vals <- list(start_year = 1980L, end_year = 1990L, chr_var = critics_rating)
 react_tbl_row_style("Certified Fresh")
 react_tbl_row_style("Action & Adventure")
 react_tbl_row_style("PG-13")

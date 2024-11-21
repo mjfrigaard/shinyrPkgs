@@ -36,7 +36,7 @@ mod_dist_box_server <- function(id, vals) {
 
     output$box <- renderPlot({
       req(vals())
-      d_bp <- subset(shinyrPkgs::movies,
+      d_bp <- subset(sap::movies,
                      !is.na(as.character(vals()$num_var)) &
                      !is.na(as.character(vals()$chr_var)))
       a <- as.numeric(vals()$alpha)

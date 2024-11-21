@@ -37,7 +37,7 @@ mod_counts_waffle_server <- function(id, vals) {
   output$waffle_plot <- renderPlot({
     req(vals())
     x_lab <- name_case(as.character(vals()$chr_var))
-    movies <- shinyrPkgs::movies
+    movies <- sap::movies
     # convert to character 
     movies$chr_var <- as.character(movies[[vals()$chr_var]])
     # subset

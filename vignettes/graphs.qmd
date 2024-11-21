@@ -30,11 +30,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-This document contains the updated graphs in `shinyrPkgs` (beginning in the [`18_html branch`](https://github.com/mjfrigaard/shinyrPkgs/tree/18_html))
+This document contains the updated graphs in `sap` (beginning in the [`18_html branch`](https://github.com/mjfrigaard/sap/tree/18_html))
 
 ```{r}
 #| label: pkgs
-library(shinyrPkgs)
+library(sap)
 ```
 
 ## Scatter plot
@@ -275,7 +275,7 @@ The waffle graph is created using the `ggwaffle` package's `ggwaffle::geom_waffl
 ```{r}
 #| eval: false 
 x_lab <- name_case(as.character(vals()$chr_var))
-movies <- shinyrPkgs::movies
+movies <- sap::movies
 # convert to character 
 movies$chr_var <- as.character(movies[[vals()$chr_var]])
 # subset
@@ -365,7 +365,7 @@ The previous waffle graph theme elements are below (these have been replaced wit
 ```{r}
 #| eval: false 
 #| echo: true
-d_bp <- subset(shinyrPkgs::movies,
+d_bp <- subset(sap::movies,
                !is.na(as.character(vals()$num_var)) &
                !is.na(as.character(vals()$chr_var)))
 a <- as.numeric(vals()$alpha)

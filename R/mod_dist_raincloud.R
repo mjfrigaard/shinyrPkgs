@@ -37,7 +37,7 @@ mod_dist_raincloud_server <- function(id, vals) {
 
     output$cloud <- renderPlot({
       req(vals())
-      d_rc <- subset(shinyrPkgs::movies,
+      d_rc <- subset(sap::movies,
                      !is.na(as.character(vals()$num_var)) &
                      !is.na(as.character(vals()$chr_var)))
       a <- as.numeric(vals()$alpha)
