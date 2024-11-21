@@ -57,9 +57,7 @@ open sap.Rproj
 
 View all the applications in the [`sap` branches](https://github.com/mjfrigaard/sap/branches/all).
 
-## External resources 
-
-### `11_debug-print`
+## `11_debug-print`
 
 [`11_debug-print`](https://github.com/mjfrigaard/sap/tree/11_debug-print) gives an example of exploring application code with Shiny/Positron's print debugging tools. 
 
