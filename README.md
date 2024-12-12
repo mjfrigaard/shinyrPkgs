@@ -59,9 +59,9 @@ View all the applications in the [`sap` branches](https://github.com/mjfrigaard/
 
 ## External resources 
 
-### `10_debug-explore`
+### `10_debugger`
 
-[`10_debug-explore`](https://github.com/mjfrigaard/sap/tree/10_debug-explore) gives an example of exploring application code with RStudio/Positron's debugging tools. 
+[`10_debugger`](https://github.com/mjfrigaard/sap/tree/10_debugger) gives an example of exploring application code with RStudio/Positron's debugging tools. 
 
 The branch has the following apps: 
 
@@ -137,5 +137,4 @@ launch_debug <- function() {
 
   shinyApp(ui = ui, server = server)
 }
-
 ```

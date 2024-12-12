@@ -1,7 +1,7 @@
 devUI <- function() {
     addResourcePath(
-      prefix = "dev",
-      directoryPath = system.file("dev", 
+      prefix = "tidy-movies",
+      directoryPath = system.file("tidy-movies", 
                                   package = "sap")
     )
   tagList(
@@ -25,7 +25,7 @@ devUI <- function() {
           bslib::card_header(
               tags$div(
                 tags$img(
-                  src = "dev/imdb.png",
+                  src = "tidy-movies/imdb.png",
                   height = 80,
                   width = 110,
                   style = "margin:10px 10px"
