@@ -4,11 +4,9 @@
 
 <hr>
 
-# sap
-
 `sap` provides the code examples in for the [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) book and the [Developing & Testing Your Shiny Application](https://mjfrigaard.github.io/dev-test-shiny/) workshop provided at R in Pharma (2023).
 
-## Movie review data application
+## [Movie review data application](https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-introduce-movie-review-app)
 
 The original code and data for the Shiny app comes from the [Building Web Applications with Shiny](https://rstudio-education.github.io/shiny-course/) course.
 
@@ -60,7 +58,7 @@ View all the applications in the [`sap` branches](https://github.com/mjfrigaard/
 
 # Current branch `02.2_movies-app`
 
-The [`02.2_movies-app`](https://github.com/mjfrigaard/sap/tree/02.2_movies-app) branch of `sap` includes the code for the movie review data (from the [Building Web Applications with Shiny](https://rstudio-education.github.io/shiny-course/) course), a utility function (stored in `utils.R`), and an `app.R` file:
+The [`02.2_movies-app`](https://github.com/mjfrigaard/sap/tree/02.2_movies-app) branch of `sap` includes the code for the movie review data (from the [Building Web Applications with Shiny](https://rstudio-education.github.io/shiny-course/) course), a utility function (stored in `utils.R`), and an `app.R` file. 
 
 ```         
 ├── README.md
@@ -71,3 +69,5 @@ The [`02.2_movies-app`](https://github.com/mjfrigaard/sap/tree/02.2_movies-app) 
 
 1 directory, 5 files
 ```
+
+Read more in the [Shiny Chapter](https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-introduce-movie-review-app):
