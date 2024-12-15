@@ -4,12 +4,12 @@ withr::with_options(new = list(shiny.autoload.r = FALSE), code = {
     tryCatch(
       expr = {
         library(sap)
+        shinyAppDir(appDir = system.file("prod/app", package = "sap"))
       },
       error = function(e) {
         pkgload::load_all()
       }
     )
-    shinyAppDir(appDir = system.file("prod/app", package = "sap"))
   } else {
     pkgload::load_all()
   }

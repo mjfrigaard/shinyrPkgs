@@ -4,9 +4,17 @@
 \alias{launch_app}
 \title{Movies app standalone function}
 \usage{
-launch_app(options = list(), run = "p", ...)
+launch_app(app = "movies", options = list(), run = "p", ...)
 }
 \arguments{
+\item{app}{which app to run. Options are:
+\itemize{
+\item \code{"movies"} = the default app
+\item \code{"bslib"} = alternative \code{bslib} layout
+\item \code{"ggp2"} = tidy version of \code{ggplot2movies::movies} data
+\item \code{"quarto"} = quarto version of movies app
+}}
+
 \item{options}{arguments to pass to \code{options()}}
 
 \item{run}{where to launch app:
