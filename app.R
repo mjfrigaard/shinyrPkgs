@@ -1,5 +1,4 @@
 # install ------------------------------------
-# after installing, comment this out
 # pkgs <- c("shiny", "shinythemes", "stringr", "ggplot2", "rlang")
 # install.packages(pkgs, verbose = FALSE)
 

@@ -4,8 +4,6 @@
 
 <hr>
 
-# sap
-
 `sap` provides the code examples in for the [Shiny App-Packages](https://mjfrigaard.github.io/shiny-app-pkgs/) book and the [Developing & Testing Your Shiny Application](https://mjfrigaard.github.io/dev-test-shiny/) workshop provided at R in Pharma (2023).
 
 ## Movie review data application
@@ -57,7 +55,7 @@ open sap.Rproj
 
 View all the applications in the [`sap` branches](https://github.com/mjfrigaard/sap/branches/all).
 
-# Current branch `02.3_proj-app`
+# [App folders](https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders)
 
 The [`02.3_proj-app`](https://github.com/mjfrigaard/sap/tree/02.3_proj-app) branch of `sap` includes and `R/` folder and external resources have been included in `www`. 
 
@@ -104,4 +102,6 @@ Title: movies app
 Author: John Smith
 DisplayMode: Showcase
 ```
+
+Read more in the [Shiny chapter.](https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders)
 
