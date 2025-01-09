@@ -7,6 +7,7 @@
 #' 
 #' @family {"scatter plot module functions"}
 #' 
+#' @export
 mod_scatter_display_ui <- function(id) {
   ns <- NS(id)
   tagList(
@@ -35,11 +36,10 @@ mod_scatter_display_ui <- function(id) {
 #' 
 #' @family {"scatter plot module functions"}
 #' 
+#' @export
 mod_scatter_display_server <- function(id, var_inputs) {
   moduleServer(id, function(input, output, session) {
     
-    
-
     inputs <- reactive({
       plot_title <- tools::toTitleCase(var_inputs()$plot_title)
         list(
