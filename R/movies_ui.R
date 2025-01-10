@@ -111,6 +111,7 @@ movies_ui <- function(bslib = FALSE) {
                 )
               ),
              bslib::card_body(
+              verbatimTextOutput(outputId = "vals"),
               mod_scatter_display_ui("plot")
             )
           )

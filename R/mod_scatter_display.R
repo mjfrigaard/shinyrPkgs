@@ -38,8 +38,9 @@ mod_scatter_display_ui <- function(id) {
 #' 
 #' @export
 mod_scatter_display_server <- function(id, var_inputs) {
+
   moduleServer(id, function(input, output, session) {
-    
+
     inputs <- reactive({
       plot_title <- tools::toTitleCase(var_inputs()$plot_title)
         list(
@@ -51,6 +52,7 @@ mod_scatter_display_server <- function(id, var_inputs) {
           plot_title = plot_title
         )
     })
+
     output$scatterplot <- renderPlot({
       plot <- scatter_plot(
         # data --------------------
