@@ -1,7 +1,7 @@
 devUI <- function() {
     addResourcePath(
-      prefix = "dev",
-      directoryPath = system.file("dev", 
+      prefix = "tidy-movies",
+      directoryPath = system.file("tidy-movies", 
                                   package = "sap")
     )
   tagList(
@@ -18,14 +18,14 @@ devUI <- function() {
       ),
       bslib::layout_sidebar(
         sidebar = bslib::sidebar(
-          dev_mod_point_vars("vars")
+          dev_mod_vars_ui("vars")
         ),
         bslib::card(
           full_screen = TRUE,
           bslib::card_header(
               tags$div(
                 tags$img(
-                  src = "dev/imdb.png",
+                  src = "tidy-movies/imdb.png",
                   height = 80,
                   width = 110,
                   style = "margin:10px 10px"
@@ -33,6 +33,7 @@ devUI <- function() {
               )
             ),
           bslib::card_body(
+            fillable = TRUE,
             dev_mod_scatter_ui("plot")
           )
         )
