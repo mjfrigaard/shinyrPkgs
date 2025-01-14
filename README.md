@@ -57,7 +57,7 @@ open sap.Rproj
 
 View all the applications in the [`sap` branches](https://github.com/mjfrigaard/sap/branches/all).
 
-### `04_devtools`
+### [`04_devtools`](https://github.com/mjfrigaard/sap/tree/04_devtools)
 
 This branch includes a `DESCRIPTION` file that's been manually edited to include the necessary fields:
 
