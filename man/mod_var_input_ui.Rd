@@ -59,7 +59,6 @@ if (interactive()) {
 \seealso{
 \itemize{
 \item \code{\link[=mod_var_input_server]{mod_var_input_server()}}  for server-side logic.
-\item \code{\link[=mod_scatter_display_ui]{mod_scatter_display_ui()}}  for the display module.
 \item \href{https://shiny.rstudio.com/reference/shiny/latest/tagList.html}{\code{shiny::tagList()}}
 for containing UI elements.
 \item \href{https://shiny.rstudio.com/reference/shiny/latest/NS.html}{\code{shiny::NS()}}

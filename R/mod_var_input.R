@@ -24,7 +24,6 @@
 #'
 #' @seealso
 #' - [`mod_var_input_server()`]  for server-side logic.
-#' - [`mod_scatter_display_ui()`]  for the display module.
 #' - [`shiny::tagList()`](https://shiny.rstudio.com/reference/shiny/latest/tagList.html) 
 #'   for containing UI elements.
 #' - [`shiny::NS()`](https://shiny.rstudio.com/reference/shiny/latest/NS.html) 
@@ -142,7 +141,6 @@ mod_var_input_ui <- function(id) {
 #'   )
 #' }
 #'
-#' @export
 mod_var_input_server <- function(id) {
 
   moduleServer(id, function(input, output, session) {

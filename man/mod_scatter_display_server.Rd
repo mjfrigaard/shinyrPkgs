@@ -2,7 +2,7 @@
 % Please edit documentation in R/mod_scatter_display.R
 \name{mod_scatter_display_server}
 \alias{mod_scatter_display_server}
-\title{Scatter Plot Display Module - Server}
+\title{Plot Display Module - Server}
 \usage{
 mod_scatter_display_server(id, var_inputs)
 }
@@ -33,12 +33,12 @@ environment.
 \section{Reactive Inputs}{
 
 \itemize{
-\item \code{var_inputs$x}: X-axis variable.
-\item \code{var_inputs$y}: Y-axis variable.
-\item \code{var_inputs$z}: Color aesthetic variable.
-\item \code{var_inputs$alpha}: Transparency level.
-\item \code{var_inputs$size}: Size of points.
-\item \code{var_inputs$plot_title}: Title of the plot.
+\item \code{var_inputs()$x}: X-axis variable.
+\item \code{var_inputs()$y}: Y-axis variable.
+\item \code{var_inputs()$z}: Color aesthetic variable.
+\item \code{var_inputs()$alpha}: Transparency level.
+\item \code{var_inputs()$size}: Size of points.
+\item \code{var_inputs()$plot_title}: Title of the plot.
 }
 }
 
@@ -63,7 +63,7 @@ if (interactive()) {
 \item \code{\link[=scatter_plot]{scatter_plot()}} for generating the scatter plot.
 }
 
-Other \strong{Scatter Plot Display Module}: 
+Other \strong{Plot Display Module}: 
 \code{\link{mod_scatter_display_ui}()}
 }
-\concept{\strong{Scatter Plot Display Module}}
+\concept{\strong{Plot Display Module}}
