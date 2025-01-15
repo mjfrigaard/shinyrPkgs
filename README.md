@@ -58,21 +58,11 @@ open sap.Rproj
 View all the applications in the [`sap` branches](https://github.com/mjfrigaard/sap/branches/all).
 
 
-## `05_roxygen2`
+## `06.1_exports`
 
-The [`05_roxygen2`](https://github.com/mjfrigaard/sap/tree/05_roxygen2) branch of `sap` has documentation for all files in `R/`, and creates the help files in the `man/` folder:
+The [`06.1_exports`](https://github.com/mjfrigaard/sap/tree/06.1_exports) branch of `sap` covers how to export functions from your app-package.
 
 ```
-man
-├── mod_scatter_display_server.Rd
-├── mod_scatter_display_ui.Rd
-├── mod_var_input_server.Rd
-├── mod_var_input_ui.Rd
-├── launch_app.Rd
-├── movies_server.Rd
-├── movies_ui.Rd
-└── scatter_plot.Rd
 
-1 directory, 8 files
 ```
 
