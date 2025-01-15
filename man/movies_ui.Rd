@@ -2,45 +2,44 @@
 % Please edit documentation in R/movies_ui.R
 \name{movies_ui}
 \alias{movies_ui}
-\title{Movies UI function}
+\title{User Interface for the Movies Review Application}
+\usage{
+movies_ui()
+}
 \value{
-\code{ui} argument in \code{shinyApp()}
+A Shiny \code{tagList} object containing the UI elements.
 }
 \description{
-UI function for standalone app function
+Creates the user interface (UI) for the Movies Review application, which
+allows users to create customizable scatter plots based on movie data.
 }
-\details{
-The \code{\link[=launch_app]{launch_app()}} function is as a wrapper for \code{shinyApp()}:
+\section{Details}{
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{shinyApp(ui = movies_ui, server = movies_server)
-}\if{html}{\out{</div>}}
-
-In \code{\link[=launch_app]{launch_app()}}:
+The interface is built using:
 \itemize{
-\item UI is stored in \code{movies_ui()}
-\item server is stored in \code{\link[=movies_server]{movies_server()}}
-}
-}
-\section{\code{var_input} module}{
-
-\code{\link[=mod_var_input_ui]{mod_var_input_ui()}} is used to collect the following inputs:
-\itemize{
-\item \code{input$x}
-\item \code{input$y}
-\item \code{input$z}
-\item \code{input$alpha}
-\item \code{input$size}
-\item \code{input$plot_title}
+\item \strong{Theme}: \code{shinythemes::shinytheme("spacelab")}.
+\item \strong{Title Panel}: Displays the app title and a logo.
+\item \strong{Sidebar Panel}: Includes the variable selection module
+(\code{\link{mod_var_input_ui}}).
+\item \strong{Main Panel}: Displays the scatter plot module
+(\code{\link{mod_scatter_display_ui}}).
 }
 }
 
-\section{\code{scatter_display} module}{
-
-\code{\link[=mod_scatter_display_ui]{mod_scatter_display_ui()}} displays the graph output using \code{\link[=scatter_plot]{scatter_plot()}}
+\examples{
+if (interactive()) {
+  shiny::shinyApp(ui = movies_ui(), server = movies_server)
 }
 
+}
 \seealso{
-\code{\link[=mod_var_input_server]{mod_var_input_server()}}
-
-\code{\link[=mod_scatter_display_server]{mod_scatter_display_server()}}
+\itemize{
+\item \code{\link[=movies_server]{movies_server()}} for the server logic of the app.
+\item \code{\link[=mod_var_input_ui]{mod_var_input_ui()}} and \code{\link[=mod_scatter_display_ui]{mod_scatter_display_ui()}} for the modules
+included in the UI.
 }
+
+Other \strong{Application Components}: 
+\code{\link{movies_server}()}
+}
+\concept{\strong{Application Components}}

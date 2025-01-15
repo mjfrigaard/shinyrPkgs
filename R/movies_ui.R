@@ -1,39 +1,31 @@
-#' Movies UI function
-#' 
-#' UI function for standalone app function 
-#' 
-#' @usage NULL
-#' 
-#' @details
-#' The [launch_app()] function is as a wrapper for `shinyApp()`: 
-#'  
-#' ```
-#' shinyApp(ui = movies_ui, server = movies_server)
-#' ```
-#' 
-#' In [launch_app()]:
-#'  * UI is stored in `movies_ui()`    
-#'  * server is stored in [movies_server()]
-#'  
-#' @section `var_input` module: 
-#' [mod_var_input_ui()] is used to collect the following inputs:
-#'  * `input$x`
-#'  * `input$y`
-#'  * `input$z`
-#'  * `input$alpha`
-#'  * `input$size`
-#'  * `input$plot_title`
-#'  
-#' @seealso [mod_var_input_server()]
-#' 
-#' 
-#' @section `scatter_display` module: 
-#' [mod_scatter_display_ui()] displays the graph output using [scatter_plot()]
-#' 
-#' @seealso [mod_scatter_display_server()]
+#' User Interface for the Movies Review Application
 #'
-#' @return `ui` argument in `shinyApp()` 
-#' 
+#' Creates the user interface (UI) for the Movies Review application, which 
+#' allows users to create customizable scatter plots based on movie data.
+#'
+#' @return A Shiny `tagList` object containing the UI elements.
+#'
+#' @section Details:
+#' The interface is built using:
+#' - **Theme**: `shinythemes::shinytheme("spacelab")`.
+#' - **Title Panel**: Displays the app title and a logo.
+#' - **Sidebar Panel**: Includes the variable selection module 
+#'   ([`mod_var_input_ui`]).
+#' - **Main Panel**: Displays the scatter plot module 
+#'   ([`mod_scatter_display_ui`]).
+#'
+#' @seealso
+#' - [`movies_server()`] for the server logic of the app.
+#' - [`mod_var_input_ui()`] and [`mod_scatter_display_ui()`] for the modules 
+#'   included in the UI.
+#'
+#' @family **Application Components**
+#'
+#' @examples
+#' if (interactive()) {
+#'   shiny::shinyApp(ui = movies_ui(), server = movies_server)
+#' }
+#'
 movies_ui <- function() {
   tagList(
     fluidPage(

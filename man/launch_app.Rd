@@ -2,16 +2,36 @@
 % Please edit documentation in R/launch_app.R
 \name{launch_app}
 \alias{launch_app}
-\title{Movies app standalone function}
+\title{Launch the Movies Review Application}
 \usage{
 launch_app()
 }
 \value{
-shiny app
+A \strong{Shiny application} object.
 }
 \description{
-Wrapper function for \code{shiny::shinyApp()}
+Starts the Movies Review Shiny application, which provides a customizable
+scatter plot interface for analyzing movie data.
+}
+\section{Details}{
+
+The application uses:
+\itemize{
+\item \strong{UI}: Defined in \code{\link[=movies_ui]{movies_ui()}}.
+\item \strong{Server Logic}: Defined in \code{\link[=movies_server]{movies_server()}}.
+}
+}
+
+\examples{
+if (interactive()) {
+  launch_app()
+}
+
 }
 \seealso{
-\code{\link[=mod_var_input_ui]{mod_var_input_ui()}}, \code{\link[=mod_var_input_server]{mod_var_input_server()}}, \code{\link[=mod_scatter_display_ui]{mod_scatter_display_ui()}}, \code{\link[=mod_scatter_display_server]{mod_scatter_display_server()}}
+\itemize{
+\item \code{\link[=movies_ui]{movies_ui()}} for the user interface.
+\item \code{\link[=movies_server]{movies_server()}} for the server logic.
 }
+}
+\concept{\strong{Standalone Application}}
