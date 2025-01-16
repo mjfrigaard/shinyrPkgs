@@ -6,12 +6,15 @@
 #' @return A Shiny `tagList` object containing the UI elements.
 #'
 #' @section Details:
-#' The interface is built using:
-#' - **Theme**: `shinythemes::shinytheme("spacelab")`.
-#' - **Title Panel**: Displays the app title and a logo.
-#' - **Sidebar Panel**: Includes the variable selection module 
+#' The interface is built using [`bslib`](https://rstudio.github.io/bslib/)
+#' - **Page (fillable)**: [`bslib::page_fillable()`](https://rstudio.github.io/bslib/reference/page_fillable.html) 
+#'   displays the app title. 
+#' - **Sidebar**: [`bslib::layout_sidebar()`](https://rstudio.github.io/bslib/reference/sidebar.html) 
+#'   includes a logo and the variable 
+#'   selection module.
 #'   ([`mod_var_input_ui`]).
-#' - **Main Panel**: Displays the scatter plot module 
+#' - **Card**: [`bslib::card()`](https://rstudio.github.io/bslib/reference/card.html) 
+#'   displays the scatter plot module 
 #'   ([`mod_scatter_display_ui`]).
 #'
 #' @seealso
@@ -28,27 +31,41 @@
 #'
 movies_ui <- function() {
   tagList(
-    fluidPage(
-      theme = shinythemes::shinytheme("spacelab"),
-      titlePanel(
-        div(
-          img(
-            src = "shiny.png",
-            height = 60,
-            width = 55,
-            style = "margin:10px 10px"
-            ), 
-         "Movie Reviews"
-        )
-      ),
-      sidebarLayout(
-        sidebarPanel(
-          mod_var_input_ui("vars")
-        ),
-        mainPanel(
-          mod_scatter_display_ui("plot")
+    bslib::page_fillable(
+      h1("Movie Reviews"),
+      bslib::layout_sidebar(
+        sidebar =
+          bslib::sidebar(
+            title = tags$h4("Sidebar inputs"),
+            img(
+              src = "shiny.png",
+              height = 60,
+              width = 55,
+              style = "margin:10px 10px"
+            ),
+            mod_var_input_ui("vars")
+          ),
+        bslib::card(
+          full_screen = TRUE,
+          bslib::card_header(
+            tags$h4("Scatter Plot")
+          ),
+          mod_scatter_display_ui("plot"),
+          bslib::card_footer(
+            tags$blockquote(
+              tags$em(
+                tags$p(
+                  "The data for this application comes from the ",
+                  tags$a("Building web applications with Shiny",
+                    href = "https://rstudio-education.github.io/shiny-course/"
+                  ),
+                  "tutorial"
+                )
+              )
+            )
+          )
         )
       )
     )
   )
-} 
+}

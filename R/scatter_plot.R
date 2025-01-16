@@ -46,6 +46,8 @@
 #'
 #' @export
 #' 
+#' @importFrom rlang .data
+#' 
 scatter_plot <- function(df, x_var, y_var, col_var, alpha_var, size_var) {
     ggplot2::ggplot(data = df,
       ggplot2::aes(x = .data[[x_var]],

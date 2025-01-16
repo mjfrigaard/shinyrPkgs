@@ -15,13 +15,16 @@ allows users to create customizable scatter plots based on movie data.
 }
 \section{Details}{
 
-The interface is built using:
+The interface is built using \href{https://rstudio.github.io/bslib/}{\code{bslib}}
 \itemize{
-\item \strong{Theme}: \code{shinythemes::shinytheme("spacelab")}.
-\item \strong{Title Panel}: Displays the app title and a logo.
-\item \strong{Sidebar Panel}: Includes the variable selection module
+\item \strong{Page (fillable)}: \href{https://rstudio.github.io/bslib/reference/page_fillable.html}{\code{bslib::page_fillable()}}
+displays the app title.
+\item \strong{Sidebar}: \href{https://rstudio.github.io/bslib/reference/sidebar.html}{\code{bslib::layout_sidebar()}}
+includes a logo and the variable
+selection module.
 (\code{\link{mod_var_input_ui}}).
-\item \strong{Main Panel}: Displays the scatter plot module
+\item \strong{Card}: \href{https://rstudio.github.io/bslib/reference/card.html}{\code{bslib::card()}}
+displays the scatter plot module
 (\code{\link{mod_scatter_display_ui}}).
 }
 }
