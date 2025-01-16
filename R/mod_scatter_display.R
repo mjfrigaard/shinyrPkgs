@@ -57,8 +57,7 @@ mod_scatter_display_ui <- function(id) {
 #' `mod_scatter_display_server()`:
 #' - Uses `var_inputs` to dynamically generate a scatter plot with 
 #'   user-selected variables.
-#' - Reads from the `movies` dataset, which must be loaded in the app 
-#'   environment.
+#' - Reads from the `sap::movies` dataset  
 #' - Processes plot titles and axis labels to improve readability.
 #'
 #' @section Reactive Inputs:
@@ -91,9 +90,6 @@ mod_scatter_display_ui <- function(id) {
 #'
 mod_scatter_display_server <- function(id, var_inputs) {
   shiny::moduleServer(id, function(input, output, session) {
-    
-    # data --------------------------------------------------------------------
-    load("movies.RData")
 
     inputs <- shiny::reactive({
       plot_title <- tools::toTitleCase(var_inputs()$plot_title)

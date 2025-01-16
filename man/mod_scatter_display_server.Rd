@@ -24,8 +24,7 @@ Handles the server-side logic for rendering a scatter plot.
 \itemize{
 \item Uses \code{var_inputs} to dynamically generate a scatter plot with
 user-selected variables.
-\item Reads from the \code{movies} dataset, which must be loaded in the app
-environment.
+\item Reads from the \code{sap::movies} dataset
 \item Processes plot titles and axis labels to improve readability.
 }
 }
