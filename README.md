@@ -60,8 +60,75 @@ View all the applications in the [`sap` branches](https://github.com/mjfrigaard/
 
 ## `08_launch`
 
-The [`08_launch`](https://github.com/mjfrigaard/sap/tree/08_launch) branch of `sap` covers launching your app-package. 
+The [`08_launch`](https://github.com/mjfrigaard/sap/tree/08_launch) branch of `sap` covers launching your app-package from a standalone app function and `app.R` file. 
 
+### display_type()
+
+```r
+display_type <- function(run = "w") {
+  if (interactive()) {
+    if (Sys.getenv("RSTUDIO") == "1") {
+      
+      switch(
+        run,
+        p = options(shiny.launch.browser = .rs.invokeShinyPaneViewer),
+        b = options(shiny.launch.browser = .rs.invokeShinyWindowExternal),
+        w = options(shiny.launch.browser = .rs.invokeShinyWindowViewer),
+        NULL = options(shiny.launch.browser = NULL)
+      )
+      environment <- "RStudio"
+      shinyViewerType <- getOption('shiny.launch.browser') |>
+        attributes() |>
+        unlist() |>
+        unname()
+      
+      cli::cli_alert_info("App running in {environment}")
+      cli::cli_alert_info("shinyViewerType set to {shinyViewerType}")
+    } else {
+      environment <- "RStudio"
+      cli::cli_alert_info("App not running in {environment}")
+    }
+  } else {
+    cli::cli_alert_info("App not running in interactive session")
+  }
+}
+```
+
+### Updated launch_app()
+
+```r
+launch_app <- function(options = list(), run = "p") {
+  display_type(run = run)
+  shinyApp( 
+    ui = movies_ui(),
+    server = movies_server,
+    options = options
+  )
+}
+```
+
+
+### app.R
+
+```r
+withr::with_options(new = list(shiny.autoload.r = FALSE), code = {
+  if (!interactive()) {
+    sink(stderr(), type = "output")
+    tryCatch(
+      expr = {
+        library(sap)
+      },
+      error = function(e) {
+        pkgload::load_all()
+      }
+    )
+  } else {
+    pkgload::load_all()
+  }
+    sap::launch_app(
+      options = list(test.mode = TRUE), run = 'p')
+}) 
+```
 
 
 

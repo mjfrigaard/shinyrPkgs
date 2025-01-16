@@ -4,7 +4,17 @@
 \alias{launch_app}
 \title{Launch the Movies Review Application}
 \usage{
-launch_app()
+launch_app(options = list(), run = "p")
+}
+\arguments{
+\item{options}{Shiny options.}
+
+\item{run}{where to launch the application. Choices are:
+\itemize{
+\item p: RStudio viewer pane
+\item b: New browser window
+\item w: RStudio window
+}}
 }
 \value{
 A \strong{Shiny application} object.
