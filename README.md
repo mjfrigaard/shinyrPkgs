@@ -58,9 +58,11 @@ open sap.Rproj
 View all the applications in the [`sap` branches](https://github.com/mjfrigaard/sap/branches/all).
 
 
-## `07_data`
+## `08_launch`
 
-The [`07_data`](https://github.com/mjfrigaard/sap/tree/07_data) branch of `sap` covers storing various types of data in your app package.
+The [`08_launch`](https://github.com/mjfrigaard/sap/tree/08_launch) branch of `sap` covers launching your app-package. 
+
+
 
 
 
