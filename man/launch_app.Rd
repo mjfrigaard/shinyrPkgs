@@ -4,17 +4,25 @@
 \alias{launch_app}
 \title{Launch the Movies Review Application}
 \usage{
-launch_app(options = list(), run = "p")
+launch_app(app = "movies", options = list(), run = "p", ...)
 }
 \arguments{
-\item{options}{Shiny options.}
-
-\item{run}{where to launch the application. Choices are:
+\item{app}{which app to run. Options are:
 \itemize{
-\item p: RStudio viewer pane
-\item b: New browser window
-\item w: RStudio window
+\item \code{"movies"} = the default app
+\item \code{"bslib"} = alternative \code{bslib} layout
 }}
+
+\item{options}{arguments to pass to \code{options()}}
+
+\item{run}{where to launch app:
+\itemize{
+\item \code{p} = launch in viewer pane
+\item \code{b} = launch in external browser
+\item \code{w} = launch in window
+}}
+
+\item{...}{arguments passed to UI}
 }
 \value{
 A \strong{Shiny application} object.

@@ -4,7 +4,10 @@
 \alias{movies_ui}
 \title{User Interface for the Movies Review Application}
 \usage{
-movies_ui()
+movies_ui(bslib = FALSE)
+}
+\arguments{
+\item{bslib}{View bslib logo?}
 }
 \value{
 A Shiny \code{tagList} object containing the UI elements.

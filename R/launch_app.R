@@ -3,11 +3,15 @@
 #' Starts the Movies Review Shiny application, which provides a customizable
 #' scatter plot interface for analyzing movie data.
 #' 
-#' @param options Shiny options.
-#' @param run where to launch the application. Choices are: 
-#' *  p: RStudio viewer pane  
-#' *  b: New browser window   
-#' *  w: RStudio window   
+#' @param app which app to run. Options are:
+#'  * `"movies"` = the default app  
+#'  * `"bslib"` = alternative `bslib` layout
+#' @param options arguments to pass to `options()`
+#' @param run where to launch app:
+#'  * `p` = launch in viewer pane
+#'  * `b` = launch in external browser
+#'  * `w` = launch in window
+#' @param ... arguments passed to UI 
 #'
 #' @return A **Shiny application** object.
 #'
@@ -32,11 +36,21 @@
 #' 
 #' @import shiny
 #' 
-launch_app <- function(options = list(), run = "p") {
-  display_type(run = run)
-  shinyApp( 
-    ui = movies_ui(),
-    server = movies_server,
-    options = options
-  )
+launch_app <- function(app = "movies", options = list(), run = "p", ...) {
+  if (interactive()) {
+    display_type(run = run)
+  }
+  if (app == "bslib") {
+    shinyApp(
+      ui = movies_ui(bslib = TRUE),
+      server = movies_server,
+      options = options
+    )
+  } else {
+    shinyApp(
+      ui = movies_ui(...),
+      server = movies_server,
+      options = options
+    )
+  }
 }
