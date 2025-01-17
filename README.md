@@ -57,7 +57,7 @@ open sap.Rproj
 
 View all the applications in the [`sap` branches](https://github.com/mjfrigaard/sap/branches/all).
 
-## `11_debug-print`
+## `12_debug-apps`
 
-[`11_debug-print`](https://github.com/mjfrigaard/sap/tree/11_debug-print) gives an example of debugging Shiny code using various 'print' functions and tools. 
+[`12_debug-apps`](https://github.com/mjfrigaard/sap/tree/12_debug-apps) gives an example of debugging Shiny code using various 'print' functions and tools. 
 

@@ -86,7 +86,7 @@ mod_var_input_ui <- function(id) {
       ),
       selected = "mpaa_rating"
     ),
-    verbatimTextOutput(ns("vars")),
+    verbatimTextOutput(ns("vals")),
     sliderInput(
       inputId = ns("alpha"),
       label = "Alpha:",
@@ -150,19 +150,15 @@ mod_var_input_server <- function(id) {
 
   moduleServer(id, function(input, output, session) {
 
-    observe({
-      cat("Selected x, y, and color:\n")
-      print(c('x' = input$x, 
-              'y' = input$y, 
-              'color' = input$z))
-      
-      output$vars <- renderPrint({
-        list('x' = input$x, 
-             'y' = input$y, 
-             'color' = input$z)
+    observe({      
+      output$vals <- renderPrint({
+        all_vals <- reactiveValuesToList(x = input, all.names = TRUE)
+        lobstr::tree(all_vals)
       })
     }) |> 
-      bindEvent(c(input$x, input$y, input$x))
+      bindEvent(c(input$x, input$y, input$x, 
+                  input$alpha, input$size, 
+                  input$plot_title))
     
     return(
       reactive({

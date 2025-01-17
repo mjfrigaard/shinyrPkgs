@@ -58,6 +58,7 @@ movies_ui <- function(bslib = FALSE) {
                 tags$h4("Scatter Plot")
               ),
               bslib::card_body(fillable = TRUE,
+                verbatimTextOutput(outputId = "vals"),
                 mod_scatter_display_ui("plot")
               ),
               bslib::card_footer(

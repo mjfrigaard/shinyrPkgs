@@ -31,11 +31,16 @@ movies_server <- function(input, output, session) {
 
       output$vals <- renderPrint({
         app_vals <- reactiveValuesToList(x = input, all.names = TRUE)
-        str(app_vals)
+        lobstr::tree(app_vals)
       })
+  
+      observe({
+        browser()
       
       selected_vars <- mod_var_input_server("vars")
 
       mod_scatter_display_server("plot", var_inputs = selected_vars)
+        
+    })
       
 }
