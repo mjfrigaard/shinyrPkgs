@@ -58,7 +58,89 @@ open sap.Rproj
 View all the applications in the [`sap` branches](https://github.com/mjfrigaard/sap/branches/all).
 
 
-## `09.1_www`
+## `09_inst`
 
-The [`09.1_www`](https://github.com/mjfrigaard/sap/tree/09.1_www) branch of `sap` covers handling external resources for you application. 
+The [`09_inst`](https://github.com/mjfrigaard/sap/tree/09_inst) branch of `sap` covers handling external resources for you application. 
+
+### `inst/` folder
+
+This branch contains the following `inst/` folder files:
+
+```sh
+inst
+├── extdata
+│   └── movies.fst
+├── quarto
+│   ├── _quarto.yml
+│   ├── index.html
+│   ├── index.qmd
+│   └── www
+│       ├── quarto.png
+│       └── styles.scss
+├── tidy-movies
+│   ├── R
+│   │   ├── devServer.R
+│   │   ├── devUI.R
+│   │   ├── dev_mod_scatter.R
+│   │   └── dev_mod_vars.R
+│   ├── app.R
+│   ├── imdb.png
+│   └── tidy_movies.fst
+└── www
+    ├── bootstrap.png
+    └── shiny.png
+```
+
+Three app variations are in this branch, and they can all be launched using the `launch_app()` function.
+
+### launch_app(app = "movies")
+
+This launches our standard `movies` data application with the Shiny logo. 
+
+### launch_app(app = "bslib")
+
+This launches a slight variation of the `movies` data application, but with a dark theme and the Bootstrap logo. 
+
+### launch_app(app = "ggp2")
+
+Launches an application with a tidy version of the [`ggplot2movies` data](https://github.com/hadley/ggplot2movies) in [`fst` format](https://www.fstpackage.org/). 
+
+### launch_app(app = "quarto")
+
+Launches a `movies` data application stored in a [Quarto document](https://quarto.org/docs/interactive/shiny/). 
+
+### app.R
+
+The updated `app.R` file will launch a production version of the application: 
+
+```r
+withr::with_options(new = list(shiny.autoload.r = FALSE), code = {
+  if (!interactive()) {
+    sink(stderr(), type = "output")
+    tryCatch(
+      expr = {
+        library(sap)
+      },
+      error = function(e) {
+        pkgload::load_all()
+      }
+    )
+    shinyAppDir(appDir = system.file("prod/app", package = "sap"))
+  } else {
+    pkgload::load_all()
+  }
+  launch_app(options = list(test.mode = FALSE), run = 'p')
+})
+```
+
+Deploy with: 
+
+```r
+library(sap)
+rsconnect::deployApp(appName = 'movie-reviews-prod')
+```
+
+
+
+
 

@@ -1,0 +1,5 @@
+title: "Quarto Movies App"
+
+format:
+  html:
+    embed-resources: true

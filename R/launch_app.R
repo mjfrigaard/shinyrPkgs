@@ -5,7 +5,8 @@
 #' 
 #' @param app which app to run. Options are:
 #'  * `"movies"` = the default app  
-#'  * `"bslib"` = alternative `bslib` layout
+#'  * `"bslib"` = alternative `bslib` layout 
+#'  * `"ggp2"` = `ggplot2movies` (tidy) data app.
 #' @param options arguments to pass to `options()`
 #' @param run where to launch app:
 #'  * `p` = launch in viewer pane
@@ -25,6 +26,10 @@
 #' - [`movies_server()`] for the server logic.
 #'
 #' @family **Standalone Application**
+#' 
+#' @details
+#' See the [ggplot2movies](https://github.com/hadley/ggplot2movies) package.
+#' 
 #'
 #' @examples
 #' if (interactive()) {
@@ -46,6 +51,18 @@ launch_app <- function(app = "movies", options = list(), run = "p", ...) {
       server = movies_server,
       options = options
     )
+  } else if (app == "ggp2") {
+      shinyAppDir(
+        appDir = system.file("tidy-movies",
+          package = "sap"
+      ),
+      options = options
+      )
+  } else if (app == "quarto") {
+      quarto::quarto_preview(
+        system.file("quarto", "index.qmd",
+            package = "sap" ), 
+        render = "all")
   } else {
     shinyApp(
       ui = movies_ui(...),

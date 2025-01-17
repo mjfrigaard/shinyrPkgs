@@ -28,6 +28,7 @@
 #'   )
 #' }
 #'
+#' @export
 mod_scatter_display_ui <- function(id) {
   ns <- shiny::NS(id)
   shiny::tagList(
@@ -88,6 +89,7 @@ mod_scatter_display_ui <- function(id) {
 #'   )
 #' }
 #'
+#' @export
 mod_scatter_display_server <- function(id, var_inputs) {
   shiny::moduleServer(id, function(input, output, session) {
 

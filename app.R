@@ -9,9 +9,9 @@ withr::with_options(new = list(shiny.autoload.r = FALSE), code = {
         pkgload::load_all()
       }
     )
+    shinyAppDir(appDir = system.file("prod/app", package = "sap"))
   } else {
     pkgload::load_all()
   }
-    sap::launch_app(
-      options = list(test.mode = TRUE), run = 'p')
-}) 
+  launch_app(options = list(test.mode = FALSE), run = 'p')
+})

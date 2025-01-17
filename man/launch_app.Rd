@@ -11,6 +11,7 @@ launch_app(app = "movies", options = list(), run = "p", ...)
 \itemize{
 \item \code{"movies"} = the default app
 \item \code{"bslib"} = alternative \code{bslib} layout
+\item \code{"ggp2"} = \code{ggplot2movies} (tidy) data app.
 }}
 
 \item{options}{arguments to pass to \code{options()}}
@@ -30,6 +31,9 @@ A \strong{Shiny application} object.
 \description{
 Starts the Movies Review Shiny application, which provides a customizable
 scatter plot interface for analyzing movie data.
+}
+\details{
+See the \href{https://github.com/hadley/ggplot2movies}{ggplot2movies} package.
 }
 \section{Details}{
 
