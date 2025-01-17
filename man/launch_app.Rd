@@ -12,6 +12,7 @@ launch_app(app = "movies", options = list(), run = "p", ...)
 \item \code{"movies"} = the default app
 \item \code{"bslib"} = alternative \code{bslib} layout
 \item \code{"ggp2"} = \code{ggplot2movies} (tidy) data app.
+\item \code{"quarto"} = Quarto movies app.
 }}
 
 \item{options}{arguments to pass to \code{options()}}

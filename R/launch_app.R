@@ -7,6 +7,7 @@
 #'  * `"movies"` = the default app  
 #'  * `"bslib"` = alternative `bslib` layout 
 #'  * `"ggp2"` = `ggplot2movies` (tidy) data app.
+#'  * `"quarto"` = Quarto movies app.
 #' @param options arguments to pass to `options()`
 #' @param run where to launch app:
 #'  * `p` = launch in viewer pane
