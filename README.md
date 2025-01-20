@@ -57,14 +57,14 @@ open sap.Rproj
 
 View all the applications in the [`sap` branches](https://github.com/mjfrigaard/sap/branches/all).
 
-# Current branch `03.1_description`
+# `03.1_description`
 
 The [`03.1_description`](https://github.com/mjfrigaard/sap/tree/03.1_description) branch of `sap` has an updated `DESCRIPTION` file:
 
 ```
 Package: sap
 Title: Shiny App-Packages
-Version: 0.0.0.9000
+Version: 0.3.1
 Author: John Smith [aut, cre]
 Maintainer: John Smith <John.Smith@email.io>
 Description: An R package with a collection of Shiny applications.
