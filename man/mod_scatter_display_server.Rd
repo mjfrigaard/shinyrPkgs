@@ -7,9 +7,9 @@
 mod_scatter_display_server(id, var_inputs)
 }
 \arguments{
-\item{id}{\emph{(character)} Namespace ID for the module.}
+\item{id}{*(character)* Namespace ID for the module.}
 
-\item{var_inputs}{\emph{(reactive)} A reactive expression containing
+\item{var_inputs}{*(reactive)* A reactive expression containing 
 user-selected variables and attributes.}
 }
 \value{
@@ -19,27 +19,23 @@ No direct return value. This function generates a plot output.
 Handles the server-side logic for rendering a scatter plot.
 }
 \section{Details}{
-
-\code{mod_scatter_display_server()}:
-\itemize{
-\item Uses \code{var_inputs} to dynamically generate a scatter plot with
-user-selected variables.
-\item Reads from the \code{movies} dataset, which must be loaded in the app
-environment.
-\item Processes plot titles and axis labels to improve readability.
-}
+ 
+`mod_scatter_display_server()`:
+- Uses `var_inputs` to dynamically generate a scatter plot with 
+  user-selected variables.
+- Reads from the `movies` dataset, which must be loaded in the app 
+  environment.
+- Processes plot titles and axis labels to improve readability.
 }
 
 \section{Reactive Inputs}{
 
-\itemize{
-\item \code{var_inputs()$x}: X-axis variable.
-\item \code{var_inputs()$y}: Y-axis variable.
-\item \code{var_inputs()$z}: Color aesthetic variable.
-\item \code{var_inputs()$alpha}: Transparency level.
-\item \code{var_inputs()$size}: Size of points.
-\item \code{var_inputs()$plot_title}: Title of the plot.
-}
+- `var_inputs()$x`: X-axis variable.
+- `var_inputs()$y`: Y-axis variable.
+- `var_inputs()$z`: Color aesthetic variable.
+- `var_inputs()$alpha`: Transparency level.
+- `var_inputs()$size`: Size of points.
+- `var_inputs()$plot_title`: Title of the plot.
 }
 
 \examples{
@@ -58,12 +54,10 @@ if (interactive()) {
 
 }
 \seealso{
-\itemize{
-\item \code{\link[=mod_var_input_server]{mod_var_input_server()}} for variable selection.
-\item \code{\link[=scatter_plot]{scatter_plot()}} for generating the scatter plot.
-}
+- [`mod_var_input_server()`] for variable selection.
+- [`scatter_plot()`] for generating the scatter plot.
 
-Other \strong{Plot Display Module}: 
+Other **Plot Display Module**: 
 \code{\link{mod_scatter_display_ui}()}
 }
-\concept{\strong{Plot Display Module}}
+\concept{**Plot Display Module**}

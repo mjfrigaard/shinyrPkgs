@@ -7,7 +7,7 @@
 launch_app()
 }
 \value{
-A \strong{Shiny application} object.
+A **Shiny application** object.
 }
 \description{
 Starts the Movies Review Shiny application, which provides a customizable
@@ -16,10 +16,8 @@ scatter plot interface for analyzing movie data.
 \section{Details}{
 
 The application uses:
-\itemize{
-\item \strong{UI}: Defined in \code{\link[=movies_ui]{movies_ui()}}.
-\item \strong{Server Logic}: Defined in \code{\link[=movies_server]{movies_server()}}.
-}
+- **UI**: Defined in [`movies_ui()`].
+- **Server Logic**: Defined in [`movies_server()`].
 }
 
 \examples{
@@ -29,9 +27,7 @@ if (interactive()) {
 
 }
 \seealso{
-\itemize{
-\item \code{\link[=movies_ui]{movies_ui()}} for the user interface.
-\item \code{\link[=movies_server]{movies_server()}} for the server logic.
+- [`movies_ui()`] for the user interface.
+- [`movies_server()`] for the server logic.
 }
-}
-\concept{\strong{Standalone Application}}
+\concept{**Standalone Application**}

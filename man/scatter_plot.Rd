@@ -7,29 +7,29 @@
 scatter_plot(df, x_var, y_var, col_var, alpha_var, size_var)
 }
 \arguments{
-\item{df}{\emph{(data.frame)} The dataset containing the variables to plot.}
+\item{df}{*(data.frame)* The dataset containing the variables to plot.}
 
-\item{x_var}{\emph{(character)} Name of the variable for the x-axis.}
+\item{x_var}{*(character)* Name of the variable for the x-axis.}
 
-\item{y_var}{\emph{(character)} Name of the variable for the y-axis.}
+\item{y_var}{*(character)* Name of the variable for the y-axis.}
 
-\item{col_var}{\emph{(character)} Name of the variable for the color aesthetic.}
+\item{col_var}{*(character)* Name of the variable for the color aesthetic.}
 
-\item{alpha_var}{\emph{(numeric)} Transparency level of points (0 to 1).}
+\item{alpha_var}{*(numeric)* Transparency level of points (0 to 1).}
 
-\item{size_var}{\emph{(numeric)} Size of points.}
+\item{size_var}{*(numeric)* Size of points.}
 }
 \value{
-A \code{ggplot} object representing the scatter plot.
+A `ggplot` object representing the scatter plot.
 }
 \description{
-Custom \href{https://ggplot2.tidyverse.org/}{\code{ggplot2}} function for building
-scatter plots in \code{sap}.
+Custom [`ggplot2`](https://ggplot2.tidyverse.org/) function for building 
+scatter plots in `sap`.
 }
 \section{Details}{
 
-\code{scatter_plot()} is designed for use in Shiny applications but can also be
-used independently.
+`scatter_plot()` is designed for use in Shiny applications but can also be 
+ used independently.
 It supports customization of transparency, size, and color aesthetics.
 }
 
@@ -45,11 +45,9 @@ scatter_plot(
 
 }
 \seealso{
-\itemize{
-\item \code{\link[=mod_scatter_display_server]{mod_scatter_display_server()}} for integrating this function into the
-scatter plot module.
-\item \href{https://ggplot2.tidyverse.org/}{\code{ggplot2::ggplot()}} for details on
-\code{ggplot2} usage.
+- [`mod_scatter_display_server()`] for integrating this function into the
+  scatter plot module.
+- [`ggplot2::ggplot()`](https://ggplot2.tidyverse.org/) for details on 
+  `ggplot2` usage.
 }
-}
-\concept{\strong{Utility Functions}}
+\concept{**Utility Functions**}

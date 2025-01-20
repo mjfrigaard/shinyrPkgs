@@ -7,45 +7,41 @@
 mod_var_input_server(id)
 }
 \arguments{
-\item{id}{\emph{(character)} Namespace ID for the module.}
+\item{id}{*(character)* Namespace ID for the module.}
 }
 \value{
-A \strong{reactive expression} that returns a list of selected input
-values:
-\itemize{
-\item \code{y}: Variable for the y-axis.
-\item \code{x}: Variable for the x-axis.
-\item \code{z}: Variable for the color aesthetic.
-\item \code{alpha}: Transparency level of points (0-1).
-\item \code{size}: Size of the points.
-\item \code{plot_title}: Title for the scatter plot.
-}
+A **reactive expression** that returns a list of selected input
+  values:  
+- `y`: Variable for the y-axis.
+- `x`: Variable for the x-axis.
+- `z`: Variable for the color aesthetic.
+- `alpha`: Transparency level of points (0-1).
+- `size`: Size of the points.
+- `plot_title`: Title for the scatter plot.
 }
 \description{
 Handles the server-side logic for the variable input module.
 }
 \section{Details}{
-
-\code{mod_var_input_server()} reads user input from the corresponding UI
-function created with
-\code{mod_var_input_ui()}. It processes and returns a reactive object
-containing the selected variables and plot attributes.
+ 
+`mod_var_input_server()` reads user input from the corresponding UI 
+ function created with 
+`mod_var_input_ui()`. It processes and returns a reactive object 
+ containing the selected variables and plot attributes.
 }
 
 \seealso{
-\itemize{
-\item \code{\link[=mod_var_input_ui]{mod_var_input_ui()}} for the UI counterpart of this module.
-\item \code{\link[=mod_scatter_display_server]{mod_scatter_display_server()}} for displaying the scatter plot.
+- [`mod_var_input_ui()`] for the UI counterpart of this module.
+- [`mod_scatter_display_server()`] for displaying the scatter plot.
 }
-}
-\concept{\strong{Variable Input Module}
+\concept{**Variable Input Module**
 
 if (interactive()) {
-shiny::shinyApp(
-ui = shiny::fluidPage(mod_var_input_ui("vars")),
-server = function(input, output, session) {
-selected_vars <- mod_var_input_server("vars")
-shiny::observe(print(selected_vars()))
-}
-)
+  shiny::shinyApp(
+    ui = shiny::fluidPage(mod_var_input_ui("vars")),
+    server = function(input, output, session) {
+      selected_vars <- mod_var_input_server("vars")
+      shiny::observe(print(selected_vars()))
+    }
+  )
 }}
