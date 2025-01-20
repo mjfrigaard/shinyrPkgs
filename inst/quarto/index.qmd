@@ -37,6 +37,11 @@ mod_var_input_ui("vars")
 ```
 
 ```{r}
+#| panel: input
+mod_aes_input_ui("aes")
+```
+
+```{r}
 #| panel: center
 mod_scatter_display_ui("plot")
 ```
@@ -67,7 +72,11 @@ tags$em(
 
 selected_vars <- mod_var_input_server("vars")
 
-mod_scatter_display_server("plot", var_inputs = selected_vars)
+selected_aes <- mod_aes_input_server("aes")
+
+mod_scatter_display_server("plot", 
+                            var_inputs = selected_vars, 
+                            aes_inputs = selected_aes)
 
 ```
 
