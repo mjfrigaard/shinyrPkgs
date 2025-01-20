@@ -4,13 +4,16 @@
 \alias{mod_scatter_display_server}
 \title{Scatter Plot Display Module - Server}
 \usage{
-mod_scatter_display_server(id, var_inputs)
+mod_scatter_display_server(id, var_inputs, aes_inputs)
 }
 \arguments{
 \item{id}{\emph{(character)} Namespace ID for the module.}
 
 \item{var_inputs}{\emph{(reactive)} A reactive expression containing
-user-selected variables and attributes.}
+user-selected variables.}
+
+\item{aes_inputs}{\emph{(reactive)} A reactive expression containing
+user-selected attributes.}
 }
 \value{
 No direct return value. This function generates a plot output.
@@ -36,9 +39,9 @@ environment.
 \item \code{var_inputs()$x}: X-axis variable.
 \item \code{var_inputs()$y}: Y-axis variable.
 \item \code{var_inputs()$z}: Color aesthetic variable.
-\item \code{var_inputs()$alpha}: Transparency level.
-\item \code{var_inputs()$size}: Size of points.
-\item \code{var_inputs()$plot_title}: Title of the plot.
+\item \code{aes_inputs()$alpha}: Transparency level.
+\item \code{aes_inputs()$size}: Size of points.
+\item \code{aes_inputs()$plot_title}: Title of the plot.
 }
 }
 
@@ -47,11 +50,13 @@ if (interactive()) {
   shiny::shinyApp(
     ui = shiny::fluidPage(
       mod_var_input_ui("vars"),
+      mod_aes_input_ui("aes"),
       mod_scatter_display_ui("plot")
     ),
     server = function(input, output, session) {
       selected_vars <- mod_var_input_server("vars")
-      mod_scatter_display_server("plot", selected_vars)
+      selected_aes <- mod_var_input_server("aes")
+      mod_scatter_display_server("plot", selected_vars, selected_aes)
     }
   )
 }
@@ -60,6 +65,7 @@ if (interactive()) {
 \seealso{
 \itemize{
 \item \code{\link[=mod_var_input_server]{mod_var_input_server()}} for variable selection.
+\item \code{\link[=mod_aes_input_server]{mod_aes_input_server()}} for aesthetics selection.
 \item \code{\link[=scatter_plot]{scatter_plot()}} for generating the scatter plot.
 }
 

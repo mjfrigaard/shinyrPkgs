@@ -33,14 +33,17 @@ movies_server <- function(input, output, session) {
         app_vals <- reactiveValuesToList(x = input, all.names = TRUE)
         lobstr::tree(app_vals)
       })
-  
-      observe({
-        browser()
+      # observe({
+      #   browser()
       
       selected_vars <- mod_var_input_server("vars")
+  
+      selected_aes <- mod_aes_input_server("aes")
 
-      mod_scatter_display_server("plot", var_inputs = selected_vars)
+      mod_scatter_display_server("plot", 
+                                  var_inputs = selected_vars, 
+                                  aes_inputs = selected_aes)
         
-    })
+    # })
       
 }

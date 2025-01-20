@@ -44,7 +44,9 @@ mod_scatter_display_ui <- function(id) {
 #'
 #' @param id *(character)* Namespace ID for the module.
 #' @param var_inputs *(reactive)* A reactive expression containing 
-#'  user-selected variables and attributes.
+#'  user-selected variables.
+#' @param aes_inputs *(reactive)* A reactive expression containing 
+#'  user-selected attributes.
 #'
 #' @return No direct return value. This function generates a plot output.
 #'
@@ -60,12 +62,13 @@ mod_scatter_display_ui <- function(id) {
 #' - `var_inputs()$x`: X-axis variable.
 #' - `var_inputs()$y`: Y-axis variable.
 #' - `var_inputs()$z`: Color aesthetic variable.
-#' - `var_inputs()$alpha`: Transparency level.
-#' - `var_inputs()$size`: Size of points.
-#' - `var_inputs()$plot_title`: Title of the plot.
+#' - `aes_inputs()$alpha`: Transparency level.
+#' - `aes_inputs()$size`: Size of points.
+#' - `aes_inputs()$plot_title`: Title of the plot.
 #'
 #' @seealso
 #' - [`mod_var_input_server()`] for variable selection.
+#' - [`mod_aes_input_server()`] for aesthetics selection.
 #' - [`scatter_plot()`] for generating the scatter plot.
 #'
 #' @family **Plot Display Module**
@@ -75,32 +78,35 @@ mod_scatter_display_ui <- function(id) {
 #'   shiny::shinyApp(
 #'     ui = shiny::fluidPage(
 #'       mod_var_input_ui("vars"),
+#'       mod_aes_input_ui("aes"),
 #'       mod_scatter_display_ui("plot")
 #'     ),
 #'     server = function(input, output, session) {
 #'       selected_vars <- mod_var_input_server("vars")
-#'       mod_scatter_display_server("plot", selected_vars)
+#'       selected_aes <- mod_var_input_server("aes")
+#'       mod_scatter_display_server("plot", selected_vars, selected_aes)
 #'     }
 #'   )
 #' }
 #' 
 #' @export
-mod_scatter_display_server <- function(id, var_inputs) {
+mod_scatter_display_server <- function(id, var_inputs, aes_inputs) {
 
   moduleServer(id, function(input, output, session) {
 
     inputs <- reactive({
-      plot_title <- tools::toTitleCase(var_inputs()$plot_title)
+      plot_title <- tools::toTitleCase(as.character(aes_inputs()$x))
         list(
           x = var_inputs()$x,
           y = var_inputs()$y,
           z = var_inputs()$z,
-          alpha = var_inputs()$alpha,
-          size = var_inputs()$size,
+          alpha = aes_inputs()$alpha,
+          size = aes_inputs()$size,
           plot_title = plot_title
+        
         )
     })
-
+    
     output$scatterplot <- renderPlot({
       plot <- scatter_plot(
         # data --------------------
@@ -114,8 +120,8 @@ mod_scatter_display_server <- function(id, var_inputs) {
       plot +
         ggplot2::labs(
           title = inputs()$plot_title,
-          x = stringr::str_replace_all(tools::toTitleCase(inputs()$x), "_", " "),
-          y = stringr::str_replace_all(tools::toTitleCase(inputs()$y), "_", " ")
+            x = stringr::str_replace_all(tools::toTitleCase(inputs()$x), "_", " "),
+            y = stringr::str_replace_all(tools::toTitleCase(inputs()$y), "_", " ")
         ) +
         ggplot2::theme_minimal() +
         ggplot2::theme(legend.position = "bottom")

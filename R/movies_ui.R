@@ -50,7 +50,8 @@ movies_ui <- function(bslib = FALSE) {
                   width = 55,
                   style = "margin:10px 10px"
                 ),
-                mod_var_input_ui("vars")
+                mod_var_input_ui("vars"),
+                mod_aes_input_ui("aes")
               ),
             bslib::card(
               full_screen = TRUE,
@@ -58,6 +59,10 @@ movies_ui <- function(bslib = FALSE) {
                 tags$h4("Scatter Plot")
               ),
               bslib::card_body(fillable = TRUE,
+                strong(
+                  code("movies_server()"),
+                  "reactive values"
+                  ),
                 verbatimTextOutput(outputId = "vals"),
                 mod_scatter_display_ui("plot")
               ),
@@ -93,7 +98,8 @@ movies_ui <- function(bslib = FALSE) {
         ),
         bslib::layout_sidebar(
           sidebar = bslib::sidebar(
-            mod_var_input_ui("vars")
+            mod_var_input_ui("vars"),
+            mod_aes_input_ui("aes")
           ),
           bslib::card(
             full_screen = TRUE,
@@ -106,6 +112,10 @@ movies_ui <- function(bslib = FALSE) {
                 )
               ),
              bslib::card_body(
+              strong(
+                code("movies_server()"),
+                "reactive values"
+                ),
               verbatimTextOutput(outputId = "vals"),
               mod_scatter_display_ui("plot")
             )

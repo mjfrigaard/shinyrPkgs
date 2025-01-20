@@ -1,6 +1,6 @@
 #' Variable Input Module - UI
 #'
-#' Creates a UI for selecting variables and attributes for a scatter plot.
+#' Creates a UI for selecting variables for a scatter plot.
 #'
 #' @param id *(character)* Namespace ID for the module.
 #'
@@ -13,12 +13,7 @@
 #' - **Dropdowns**: 
 #'   - X-axis variable
 #'   - Y-axis variable
-#'   - Color aesthetic variable
-#' - **Sliders**:
-#'   - Transparency (`alpha`) ranging from 0 to 1.
-#'   - Point size ranging from 0 to 5.
-#' - **Text Input**:
-#'   - Plot title.
+#'   - Color variable
 #'
 #' The function uses `shiny::NS()` to namespace all input IDs.
 #'
@@ -86,24 +81,12 @@ mod_var_input_ui <- function(id) {
       ),
       selected = "mpaa_rating"
     ),
-    verbatimTextOutput(ns("vals")),
-    sliderInput(
-      inputId = ns("alpha"),
-      label = "Alpha:",
-      min = 0, max = 1, step = 0.1,
-      value = 0.5
-    ),
-    sliderInput(
-      inputId = ns("size"),
-      label = "Size:",
-      min = 0, max = 5,
-      value = 2
-    ),
-    textInput(
-      inputId = ns("plot_title"),
-      label = "Plot title",
-      placeholder = "Enter plot title"
-    )
+    strong(
+      code("var_input"),
+      "module reactive ",
+      code("inputs")
+      ),
+    verbatimTextOutput(ns("vals"))
   )
 }
 
@@ -117,16 +100,12 @@ mod_var_input_ui <- function(id) {
 #'   values:  
 #' - `y`: Variable for the y-axis.
 #' - `x`: Variable for the x-axis.
-#' - `z`: Variable for the color aesthetic.
-#' - `alpha`: Transparency level of points (0-1).
-#' - `size`: Size of the points.
-#' - `plot_title`: Title for the scatter plot.
+#' - `z`: Variable for the point colors. 
 #'
 #' @section Details: 
 #' `mod_var_input_server()` reads user input from the corresponding UI 
-#'  function created with 
-#' `mod_var_input_ui()`. It processes and returns a reactive object 
-#'  containing the selected variables and plot attributes.
+#'  function created with `mod_var_input_ui()`. It processes and returns
+#'  a reactive object containing the selected variables.
 #'
 #' @seealso
 #' - [`mod_var_input_ui()`] for the UI counterpart of this module.
@@ -150,25 +129,21 @@ mod_var_input_server <- function(id) {
 
   moduleServer(id, function(input, output, session) {
 
-    observe({      
+    observe({
       output$vals <- renderPrint({
-        all_vals <- reactiveValuesToList(x = input, all.names = TRUE)
+        all_vals <- reactiveValuesToList(input,
+                                         all.names = TRUE)
         lobstr::tree(all_vals)
       })
     }) |> 
-      bindEvent(c(input$x, input$y, input$x, 
-                  input$alpha, input$size, 
-                  input$plot_title))
+      bindEvent(c(input$x, input$y, input$x))
     
     return(
       reactive({
         list(
           "y" = input$y,
           "x" = input$x,
-          "z" = input$z,
-          "alpha" = input$alpha,
-          "size" = input$size,
-          "plot_title" = input$plot_title
+          "z" = input$z
         )
       })
     )
