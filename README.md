@@ -56,7 +56,7 @@ open sap.Rproj
 View all the applications in the [`sap` branches](https://github.com/mjfrigaard/sap/branches/all).
 
 
-# Current branch `02.2_movies-app`
+#`02.2_movies-app`
 
 The [`02.2_movies-app`](https://github.com/mjfrigaard/sap/tree/02.2_movies-app) branch of `sap` includes the code for the movie review data (from the [Building Web Applications with Shiny](https://rstudio-education.github.io/shiny-course/) course), a utility function (stored in `utils.R`), and an `app.R` file. 
 
