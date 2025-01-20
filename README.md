@@ -62,5 +62,3 @@ View all the applications in the [`sap` branches](https://github.com/mjfrigaard/
 
 The [`07_data`](https://github.com/mjfrigaard/sap/tree/07_data) branch of `sap` covers storing various types of data in your app package.
 
-
-
