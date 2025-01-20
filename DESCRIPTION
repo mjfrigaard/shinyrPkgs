@@ -1,5 +1,5 @@
 Package: sap
-Version: 0.0.0.9000
+Version: 0.4.0
 Type: Package
 Title: Shiny App-Packages
 Description: An R package with a collection of Shiny applications.

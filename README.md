@@ -64,7 +64,7 @@ This branch includes a `DESCRIPTION` file that's been manually edited to include
 ```
 Package: sap
 Title: movies app
-Version: 0.0.0.9000
+Version: 0.4.0
 Author: John Smith [aut, cre]
 Maintainer: John Smith <John.Smith@email.io>
 Description: A movie-review shiny application.
