@@ -59,6 +59,8 @@ View all the applications in the [`sap` branches](https://github.com/mjfrigaard/
 
 ## `03.2_rproj`
 
+The [`03.2_rproj` branch](https://github.com/mjfrigaard/sap/tree/03.2_rproj) contains an example of a Shiny project in RStudio. 
+
 The `sap.Rproj` file now contains the following fields: 
 
 ```
@@ -82,4 +84,4 @@ PackageInstallArgs: --no-multiarch --with-keep.source
 PackageRoxygenize: rd,collate,namespace
 ```
 
-This will prompt the **Build** pane in the IDE.
+This will prompt the **Build** pane in the RStudio IDE.
