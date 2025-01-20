@@ -63,11 +63,12 @@ This branch includes a `DESCRIPTION` file that's been manually edited to include
 
 ```
 Package: sap
-Title: movies app
-Version: 0.0.0.9000
+Version: 0.0.0.9400
+Type: Package
+Title: Shiny App-Packages
+Description: An R package with a collection of Shiny applications.
 Author: John Smith [aut, cre]
 Maintainer: John Smith <John.Smith@email.io>
-Description: A movie-review shiny application.
 License: GPL-3
 RoxygenNote: 7.2.3
 Encoding: UTF-8
