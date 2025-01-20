@@ -55,7 +55,7 @@ open sap.Rproj
 
 View all the applications in the [`sap` branches](https://github.com/mjfrigaard/sap/branches/all).
 
-# [App folders](https://mjfrigaard.github.io/shiny-app-pkgs/shiny.html#sec-shiny-folders)
+# 02.3_proj-app
 
 The [`02.3_proj-app`](https://github.com/mjfrigaard/sap/tree/02.3_proj-app) branch of `sap` includes and `R/` folder and external resources have been included in `www`. 
 
