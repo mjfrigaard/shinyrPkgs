@@ -64,7 +64,7 @@ After running `usethis::create_package(getwd())`, the `DESCRIPTION` file is upda
 ```
 Package: sap
 Title: Shiny App-Packages
-Version: 0.0.0.9000
+Version: 0.3.3
 Author: John Smith [aut, cre]
 Maintainer: John Smith <John.Smith@email.io>
 Description: An R package with a collection of Shiny applications.
