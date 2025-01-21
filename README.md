@@ -59,5 +59,5 @@ View all the applications in the [`sap` branches](https://github.com/mjfrigaard/
 
 ## `12.1_debug-mods`
 
-[`12.1_debug-mods`](https://github.com/mjfrigaard/sap/tree/12.1_debug-mods) gives an example of debugging Shiny code using various 'print' functions and tools. 
+[`12.1_debug-mods`](https://github.com/mjfrigaard/sap/tree/12.1_debug-mods) gives an example of debugging Shiny modules using `reactiveValuesToList()` and other methodss. 
 
