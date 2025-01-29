@@ -4,7 +4,7 @@
 #' scatter plot interface for analyzing movie data.
 #' 
 #' @param app which app to run. Options are:
-#'  * `"movies"` = the default app  
+#'  * `NULL` = the default app (`"movies"`)  
 #'  * `"bslib"` = alternative `bslib` layout 
 #'  * `"ggp2"` = `ggplot2movies` (tidy) data app.
 #'  * `"quarto"` = Quarto movies app.
@@ -42,10 +42,16 @@
 #' 
 #' @import shiny
 #' 
-launch_app <- function(app = "movies", options = list(), run = "p", ...) {
+launch_app <- function(app = NULL, options = list(), run = "p", ...) {
+  
   if (interactive()) {
     display_type(run = run)
   }
+
+  if (is.null(app)) {
+    app <- "movies"
+  }
+
   if (app == "bslib") {
     shinyApp(
       ui = movies_ui(bslib = TRUE),
