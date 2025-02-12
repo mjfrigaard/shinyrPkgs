@@ -65,7 +65,7 @@ mod_aes_input_ui <- function(id) {
       value = 2
     ),
     textInput(
-      inputId = ns("x"),
+      inputId = ns("plot_title"),
       label = "Plot title",
       placeholder = "Enter plot title"
     )
@@ -123,7 +123,7 @@ mod_aes_input_server <- function(id) {
       )
       if (input$alpha < 0 || input$alpha > 1) {
         logr_msg(message = "Alpha value out of range: {alpha}", 
-        level = "WARN", log_file = "_logs/app_log.txt")
+        level = "WARN")
       }
 
       validate(
@@ -132,7 +132,7 @@ mod_aes_input_server <- function(id) {
       )
       if (input$size <= 0) {
         logr_msg(message = "Invalid size value: {size}", 
-        level = "ERROR", log_file = "_logs/app_log.txt")
+        level = "ERROR")
       }
 
     }) |> bindEvent(c(input$alpha, input$size))
@@ -142,7 +142,7 @@ mod_aes_input_server <- function(id) {
         list(
           "alpha" = input$alpha,
           "size" = input$size,
-          "plot_title" = input$x
+          "plot_title" = input$plot_title
         )
       })
     )
